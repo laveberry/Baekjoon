@@ -4,9 +4,10 @@ class Solution {
         String[] arr = my_string.split("");
         
         for(int i=0 ; i<arr.length ; i++){
-            for(int j=0 ; j<n ; j++){
-                str.append(arr[i]);
-            }      
+            // for(int j=0 ; j<n ; j++){
+            //     str.append(arr[i]);
+            // }
+            str.append(arr[i].repeat(n));
         }
         return str.toString();
     }
