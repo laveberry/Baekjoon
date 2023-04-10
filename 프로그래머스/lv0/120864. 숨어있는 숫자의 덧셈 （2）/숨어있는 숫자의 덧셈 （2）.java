@@ -12,5 +12,8 @@ class Solution {
         }   
         
         return answer;
+        
+        // return Arrays.stream(myString.split("[A-Z|a-z]")).filter(s -> !s.isEmpty()).mapToInt(Integer::parseInt).sum();
+
     }
 }
