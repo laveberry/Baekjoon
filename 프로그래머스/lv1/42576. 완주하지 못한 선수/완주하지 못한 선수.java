@@ -13,8 +13,9 @@ class Solution {
             map.put(com, map.getOrDefault(com, 0)-1);
         }
         
-        for(String key : map.keySet()){
-            if(map.get(key)!=0) return key;
+        //key, value 다 가져올땐 keySet()보다 entrySet() 사용
+        for(Map.Entry<String, Integer> entry : map.entrySet()){
+            if(entry.getValue()!=0) return entry.getKey();
         }
         
         return answer;
