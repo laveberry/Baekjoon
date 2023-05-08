@@ -13,11 +13,10 @@ class Solution {
             if(winMap.containsKey(lottos[i])) winMap.remove(lottos[i]);
         }
         
-        int rk = rank(winMap.size());
-        answer[1] = rk == 7 ? 6 : rk;
+        answer[1]  = rank(winMap.size());
         
-        if(cnt>=rk) answer[0] = 1;
-        else answer[0] = rk -cnt;
+        if(cnt>=answer[1]) answer[0] = 1;
+        else answer[0] = answer[1] - cnt;
         
         return answer;
     }
@@ -26,10 +25,9 @@ class Solution {
         switch(num){
             case 0 : return 1; //전체일치
             case 1 : return 2; //5개일치
-            case 2 : return 3; //4개 - 1등
-            case 3 : return 4; //3개 - 2등
-            case 4 : return 5; //2 - 3등
-            case 5 : return 6; //1 - 4등
+            case 2 : return 3;
+            case 3 : return 4;
+            case 4 : return 5;
             default : return 6;
         }
     }
