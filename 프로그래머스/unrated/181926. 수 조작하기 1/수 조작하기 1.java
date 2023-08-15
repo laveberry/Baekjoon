@@ -1,22 +1,6 @@
 class Solution {
     public int solution(int n, String control) {
-        int answer = n;
-        
-        for(String a : control.split("")){
-            answer += calNum(a);
-        }
-        
-        return answer;
+        return control.chars().reduce(n, (acc, c) -> acc + (c == 'w' ? 1 : c == 's' ? -1 : c == 'd' ? 10 : -10));
+
     }
-    
-    public int calNum(String a){
-        switch(a){
-            case "w": return 1;
-            case "s": return -1;
-            case "d": return 10;
-            case "a": return -10;
-        }
-        return 0;
-    }
-    
 }
